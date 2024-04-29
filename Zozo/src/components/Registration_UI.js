@@ -1,5 +1,11 @@
-import React,{useState} from "react";
+import React,{useState,useRef} from "react";
+import "./Registration.css";
 const Registration=()=>{
+    const name_err=useRef(null);
+    const email_err=useRef(null);
+    const phone_err=useRef(null);
+    const pass_err=useRef(null);
+    const conpass_err=useRef(null);
     const [name,setName]=useState('');
     const [email,setEmail]=useState('');
     const [pass,setPass]=useState('');
@@ -7,24 +13,51 @@ const Registration=()=>{
     const [phone,setPhone]=useState('');
 
     const handleSubmit=(e)=>{
-        e.preventDefault();
+            e.preventDefault();
+            if(name==="" ){
+                name_err.current.innerText="Enter username";
+                return false;
+            }
+            if(email==="" ){
+                email_err.current.innerText="Enter email";
+                return false;
+            }
+            if(phone===""){
+            phone_err.current.innerText="Enter phone";
+                return false;
+            }
+            if(pass===""){
+                pass_err.current.innerText="Enter passwword";
+                return false;
+            }
+            if(conpass==="" || conpass === pass){
+                conpass_err.current.innerText="confirm password";
+                return false;
+            }
+            return true;    
+
     };
     const handleChange=(e)=>{
         switch(e.target.name){
             case "Username":
-                setName(...name,e.target.value);
+                setName(e.target.value);
+                name_err.current.innerText="";
                 break;
             case "email":
-                setEmail(...email,e.target.value);
+                setEmail(e.target.value);
+                email_err.current.innerText=""
                 break;
             case "Phone":
-                setPhone(...phone,e.target.value);
+                setPhone(e.target.value);
+                phone_err.current.innerText="";
                 break;
             case "password":
-                setPass(...pass,e.target.value);
+                setPass(e.target.value);
+                pass_err.current.innerText="";
                 break;
             case "confirmpassword":
-                setConpass(...conpass,e.target.value);
+                setConpass(e.target.value);
+                conpass_err.current.innerText="";
                 break;
             default:
                 break;
@@ -33,49 +66,50 @@ const Registration=()=>{
     }
     return(
        <>
-       <form id='register' onSubmit={handleSubmit}>
-            <div className="header">
-                <h4>User Registration</h4>
-            </div>
+       <form className="register" id='register' onSubmit={handleSubmit}>
+        <div className="header">Get Your Love Here.</div>
                 <div className="fields">
                     <div className="name"><label>Name</label></div>
-                        <div><input type="text" placeholder="Username" onChange={handleChange} value={name} name="Username"/>                       <br/>
-                        <font style={{color:"red",}}>hello</font>                  
+                        <div><input type="text" onChange={handleChange} value={name} name="Username"/>                       <br/>
+                        <font ref={name_err} style={{color:"red",}}></font>                  
                     </div>
                     <div className="email"><label>Email</label></div>
                     <div>
-                        <input type="text" placeholder="Email" onChange={handleChange} value={email} name="email"/>
+                        <input type="text" onChange={handleChange} value={email} name="email"/>
                         <br></br>
-                        <font style={{color:"red",}}>hello</font> 
+                        <font ref={email_err} style={{color:"red",}}></font> 
                     </div>
                     <div className="phone"><label>Mobile</label></div>
                     <div>
-                        <input type="text" placeholder="Mobile" onChange={handleChange} value={phone} name="Phone"/>
+                        <input type="text"  onChange={handleChange} value={phone} name="Phone"/>
                         <br></br>
-                        <font style={{color:"red",}}>hello</font> 
+                        <font ref={phone_err} style={{color:"red",}}></font> 
                     </div>
                     <div className="password"><label>Password</label></div>
                     <div>
-                        <input type="text" placeholder="Passowrd" onChange={handleChange}value={pass} name="password"/>
+                        <input type="text" onChange={handleChange}value={pass} name="password"/>
                         <br></br>
-                        <font style={{color:"red",}}>hello</font> 
+                        <font ref={pass_err} style={{color:"red",}}></font> 
                     </div>
                     <div className="confirmPassword"><label>confirm paswword</label></div>
                     <div>
-                        <input type="text" placeholder="Confirm Password"  onChange={handleChange} value={conpass} name="confirmpassword"/>
+                        <input type="text" onChange={handleChange} value={conpass} name="confirmpassword"/>
                         <br></br>
-                        <font style={{color:"red",}}>hello</font> 
+                        <font ref={conpass_err} style={{color:"red",}}></font> 
                     </div>
                     <div className="agreement">
-                        <label>I Agree</label>
-                        <input type="checkbox"  name="agreement"/>
-                        <font style={{color:"red",}}>hello</font> 
+                        <label id="agreelable">I Agree</label>
+                        <input id="agree" type="checkbox"  name="agreement"/>
+                        <font style={{color:"red",}}></font> 
                     </div>
                    
                 </div> 
-                <div className="submit">
-                        <input type="submit" value="Register"/>
-                     </div> 
+                        <div className="submit">
+                                <input id="btn" type="submit" value="Create Account"/>
+                        </div> 
+                     <div className="line">
+                        <p>Already have an account? <a href='#'>login</a></p>
+                     </div>
 
        </form>
        </>

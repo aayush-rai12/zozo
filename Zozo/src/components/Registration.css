@@ -1,0 +1,90 @@
+
+.register{
+        position: relative;
+        top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        content: center;
+        width: 340px;
+        border:1px solid #b4b4a8;
+        height: 600px;
+        /* justify-content: center; */
+        align-items: center;
+        background: linear-gradient(#fbfaf9,  #ffb88c);
+        box-shadow: 0 0 10px 5px #ffb88c;
+
+}
+.header{
+        margin-bottom: 32px;
+        font-family: "Lucida Handwriting", cursive;
+        font-weight: 700;
+        font-size: 24px;
+        color:#8f1944;
+}
+.line{
+    color:#b2312f;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+
+}
+input{
+    margin: 12px 0;
+    border: transparent;
+    border-bottom: 1px solid #b4b4a8; /* This adds a bottom border */
+    width: 200px;
+    outline: none;
+    background: transparent;
+    text-align: center;
+}
+input:focus{
+    outline: none;
+}
+label{
+    display: flex;
+    justify-content: center;
+    color:#b2312f;
+    font-size: 15px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+    padding-bottom: 0px;
+
+}
+input#btn{
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    
+}
+.submit{
+    background: linear-gradient(#ec843f,  #9a1c1c);
+    border-radius: 20px;
+    color: #282828;
+    font-size: 15px;
+    font-weight: 350;
+    line-height: 1.125;
+    position: relative;
+    text-align: center;
+    transition: none;
+    width: 200px;
+}
+.agreement {
+    display: flex;
+}
+input#agree {
+    width: 40px;
+    padding: 0px;
+    margin-top: 11px;
+    border-radius:10px;
+}
+label#agreelable {
+    margin-top: 5px;
+    padding-left: 57px;
+}
+font{
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+    padding-bottom: 7px;
+}
