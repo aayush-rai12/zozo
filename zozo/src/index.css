@@ -1,6 +1,7 @@
 body, html {
   margin: 0;
   padding: 0;
+  font-family: sans-serif; /* Set a default font family */
 }
 
 .center-container {
@@ -8,8 +9,16 @@ body, html {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(#fef1e1,  #ffb88c);
+  background: linear-gradient(#fef1e1, #ffb88c);
   color: #333;
+}
+
+/* Responsive container sizing */
+@media (max-width: 768px) {
+  .login-container {
+    width: 90%;
+    max-width: unset; /* Remove max-width for smaller screens */
+  }
 }
 
 .login-container {
@@ -18,18 +27,17 @@ body, html {
   align-items: center;
   padding: 50px;
   height: 80vh;
-  background: linear-gradient( #ffcfae,#fff4e6,#feb080);
+  background: linear-gradient(#ffcfae, #fff4e6, #feb080);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 350px;
-  max-width: 90%;
 }
 
-.welcome-text, .login-details-text {
+.welcome-text,
+.login-details-text {
   margin-bottom: 20px;
   text-align: center;
 }
-
 
 .input-container {
   width: 100%;
@@ -46,8 +54,14 @@ body, html {
   font-weight: 700;
   border: none;
   border-bottom: 1px solid black;
-  width: 90px;
+  /* width: 90px; */
 }
+.validation-error {
+  color: red;
+  font-size: 0.8rem; /* Adjust font size if needed */
+  margin-bottom: 5px;
+}
+
 
 .login-input {
   width: 80%;
@@ -58,7 +72,6 @@ body, html {
   outline: none;
   text-align: center;
   margin-top: 5px; /* Add a small margin at the top */
- 
 }
 
 /* Add focus style */
@@ -69,8 +82,6 @@ body, html {
   }
 }
 
-
-
 .login-button {
   width: 50%;
   padding: 10px;
@@ -80,17 +91,13 @@ body, html {
   cursor: pointer;
   margin-bottom: 20px;
   background-color: #feb080; /* Initial background color */
-  transition: background-color 0.3s, box-shadow 0.3s; /* Add box-shadow transition */
-  box-shadow: 0 6px 8px #c97562; 
+  transition: background-color 0.3s, box-shadow 0.3s; /* Add transition */
+  box-shadow: 0 6px 8px #c97562;
 }
 
 .login-button:hover {
   background-color: #fbefde; /* New background color on hover */
-  
-  box-shadow: 0 6px 8px #c97562; 
 }
-
-
 
 /* Icon styling */
 button svg {
@@ -99,11 +106,25 @@ button svg {
   height: 20px;
 }
 
-.forgot-password-link{
-  color:#3d3c3b;
+.forgot-password-link {
+  color: #3d3c3b;
 }
-.forgot-password-text,.register-text a{
+
+.forgot-password-text,
+.register-text a {
   font-size: 0.9rem;
   color: #b5302e;
   margin-top: 10px;
+}
+
+/* Add validation error styling */
+.validation-errors {
+  color: red;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.validation-errors li {
+  margin-bottom: 5px;
 }
