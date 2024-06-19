@@ -1,20 +1,23 @@
-import React from "react";
+// import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
-// import loveline from '../../assets/images/love.png';
+import imgbg0 from '../../assets/image/love.png';
+import testIMG1 from '../../assets/image/testImg1.jpg';
+import testIMG2 from '../../assets/image/testImg2.jpg';
 
-const ExampleComponent = () => {
+const HomeSection = () => {
   const imgbg = {
-    backgroundImage:
-      'url("https://static.vecteezy.com/system/resources/previews/010/853/156/non_2x/heart-abstract-love-symbol-continuous-line-art-drawing-illustration-valentines-day-background-banner-free-png.png")',
+    backgroundImage: `url(${imgbg0})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   };
+
   const carFeature = (
     <div className="car-feature">
       <div className="card-container">
         <div className="card card1">
           <img
-            src="https://via.placeholder.com/300x400/ff9a9e/fad0c4"
+            src={testIMG1}
             alt="Card 1"
             className="card-image"
           />
@@ -24,7 +27,7 @@ const ExampleComponent = () => {
         </div>
         <div className="card card2">
           <img
-            src="https://via.placeholder.com/300x400/a18cd1/fbc2eb"
+            src={testIMG2}
             alt="Card 2"
             className="card-image"
           />
@@ -34,7 +37,7 @@ const ExampleComponent = () => {
         </div>
         <div className="card card3">
           <img
-            src="https://via.placeholder.com/300x400/fbc2eb/a6c1ee"
+            src={testIMG1}
             alt="Card 3"
             className="card-image"
           />
@@ -53,12 +56,12 @@ const ExampleComponent = () => {
         <span className="header-title">ZOZO</span>
       </div>
       <nav className="header-nav">
-        <a href="#" className="header-link">
+        <Link to="/login" className="header-link">
           Log in
-        </a>
-        <a href="#" className="header-signup">
+        </Link>
+        <Link to="/register" className="header-signup">
           Sign Up
-        </a>
+        </Link>
       </nav>
     </header>
   );
@@ -102,7 +105,7 @@ const ExampleComponent = () => {
                 We designed a platform for people to find their love without
                 being judged.
               </p>
-              <button className="cta-button">Find Your Love</button>
+              <button className="zozo-button">Find Your Love</button>
               {childCardSection}
             </div>
             {carFeature}
@@ -113,4 +116,4 @@ const ExampleComponent = () => {
   );
 };
 
-export default ExampleComponent;
+export default HomeSection;
