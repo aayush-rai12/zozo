@@ -1,11 +1,19 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Home.css";
 import imgbg0 from '../../assets/image/love.png';
 import testIMG1 from '../../assets/image/testImg1.jpg';
 import testIMG2 from '../../assets/image/testImg2.jpg';
 
 const HomeSection = () => {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const imgbg = {
     backgroundImage: `url(${imgbg0})`,
     backgroundSize: "cover",
@@ -105,13 +113,25 @@ const HomeSection = () => {
                 We designed a platform for people to find their love without
                 being judged.
               </p>
-              <button className="zozo-button">Find Your Love</button>
+              <button className="zozo-button" variant="primary" onClick={handleShow}>Find Your Love</button>
               {childCardSection}
             </div>
             {carFeature}
           </div>
           {/* <footer className="footer" ></footer> */}
         </div>
+       {/* Modal component with custom classes */}
+      <Modal show={show} onHide={handleClose} className="custom-modal">
+        <Modal.Header className="custom-modal-header">
+          <Modal.Title className="custom-modal-title">ZOZO Dating</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="custom-modal-body">Join now and start finding your perfect match!</Modal.Body>
+        <Modal.Footer className="custom-modal-footer">
+          <Link to="/register" className="custom-modal-save-button">
+          Create Account
+        </Link>
+        </Modal.Footer>
+      </Modal>
       </div>
   );
 };
