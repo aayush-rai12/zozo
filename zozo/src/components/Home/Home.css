@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
 :root {
-  --header-title-gradient-start: #ec4997;
+  --header-title-gradient-start: #ff007b;
   --header-title-gradient-end: #f6ad55;
   --header-link-bg: #dd6b20;
   --header-signup-bg: #9f7aea;
@@ -294,7 +294,7 @@ a {
 }
 
 .card-text {
-  padding: 0.1rem;
+  padding: 0.7rem;
   color: white;
   /* background-color:var(--card3-bg-start); */
 }
@@ -432,6 +432,59 @@ a {
   }
 }
 
+  /* Home Page Modal */
+
+  .custom-modal .modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    
+  }
   
-
-
+  .custom-modal .modal-content {
+    text-align: center;
+    margin: auto;
+    background-image: url('../../assets/image/loveBgm3.jpg')!important; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .custom-modal-header {
+    border-bottom: none;
+    justify-content: center;
+  }
+  
+  .custom-modal-title {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .custom-modal-body {
+    padding: 20px;
+    font-size: 18px;
+  }
+  
+  .custom-modal-footer {
+    border-top: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+    .custom-modal-save-button {
+      padding: 10px 20px;
+      background-color: var(--header-title-gradient-start);
+      color: #fff;
+      border-radius: 5px;
+      border: none;
+  }
+  .custom-modal-save-button:hover {
+    transition: background-color 0.5s ease;
+    background-color:  #dcdada;
+    font-size: 100%;
+    color: var(--header-title-gradient-start);
+  }
