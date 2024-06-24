@@ -86,6 +86,7 @@ body {
   color: white;
   border-radius: 0.5rem;
   font-size: 13px;
+  font-weight: bold;
 }
 
 a {
@@ -98,6 +99,10 @@ a {
 
 .header-signup {
   background-color: var(--header-signup-bg);
+}
+.header-link:hover,
+.header-signup:hover {
+  color: black; 
 }
 
 @media (min-width: 640px) {
@@ -188,7 +193,7 @@ a {
 /* Hover state styling */
 .zozo-button:hover {
   background: linear-gradient(to right, var(--zozo-button-hover-gradient-start), var(--zozo-button-hover-gradient-end));
-  outline: 3px solid var(--zozo-button-gradient-start); 
+  outline: 2px solid var(--zozo-button-gradient-start); 
 }
 
 .child-card-section {
@@ -254,34 +259,36 @@ a {
   height: 100%;
   border-radius: 0.5rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
   text-align: center;
   display: flex;
   flex-direction: column;
-  transition: background 0.3s ease, outline 0.3s ease;
+  outline: 1px solid transparent;
+
 }
 
 .card1 {
-  transform: rotate(-5deg);
-  top: -15%; 
+  transform: rotate(-10deg)!important;
+  top: 0%; 
   right: 70%;
   z-index: 30;
-  background: linear-gradient(to right, var(--heading-gradient-start), var(--heading-gradient-end));
 }
 
 .card2 {
-  transform: rotate(0deg);
-  top: -5%;
+  transform: rotate(0deg)!important;
+  top: 0%;
   right: 10%;
   z-index: 20;
-  background: black;
+  top: -3%;
+
 }
 
 .card3 {
-  transform: rotate(5deg);
+  
+  transform: rotate(10deg)!important;
   z-index: 10;
-  top: 7%;
+  top: 0%;
   left: 45%;
-  background: linear-gradient(to bottom right, var(--zozo-button-hover-gradient-start), var(--zozo-button-hover-gradient-end));
 }
 
 .card-image {
@@ -294,21 +301,20 @@ a {
 }
 
 .card-text {
+  font-family: 'Dancing Script', cursive;
   padding: 0.7rem;
-  color: white;
-  /* background-color:var(--card3-bg-start); */
+  color: var(--header-title-gradient-start);
 }
 
 .card-title {
-  font-size: 1.125rem;
+  font-size: 1.7rem;
   font-weight: 700;
 }
 
 .card:hover {
-  /* transform: scale(1.05); */
-   /* background: linear-gradient(to right, var(--heading-gradient-start), var(--heading-gradient-end));
-  /* z-index: 20; */
-  outline: 3px solid var(--zozo-button-gradient-start);
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+  outline: 2px solid var(--header-title-gradient-start);
+  transition: box-shadow 0.3s ease, outline 0.3s ease;
 }
 
 @media (min-width: 768px) and (max-width: 1020px) {
@@ -349,8 +355,7 @@ a {
 
   .card1 {
     top: 0;
-    transform: translateY(0);
-    /* background: linear-gradient(to bottom right, var(--heading-gradient-start), var(--heading-gradient-end)); */
+    transform: translateY(0)!important;
     right: 0%;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem
@@ -358,17 +363,13 @@ a {
 
   .card2 {
     right: 0;
-    transform: translateY(0);
-    background: linear-gradient(to bottom right, var(--card2-bg-start), var(--card2-bg-end));
+    transform: translateY(0) !important;
   }
 
   .card3 {
-    transform: translateY(0);
-    background: linear-gradient(to bottom right,var(--zozo-button-hover-gradient-start), var(--zozo-button-hover-gradient-end));
+    transform: translateY(0)!important;
     left: 0%;
     top: 0%;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem
   }
 
   .card:hover {
@@ -395,6 +396,7 @@ a {
     left: 0%;
     top: 0;
   }
+  
 }
 
 @media (max-width: 400px) {
