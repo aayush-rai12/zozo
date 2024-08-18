@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
 import userRouter from './routes/user.route.js';
+import authRouter from './routes/auth.route.js';
 // Configure dotenv
 dotenv.config();
 
@@ -13,6 +14,7 @@ mongoose.connect(uri)
   .catch(err => console.error('Error connecting to MongoDB:', err));
 
 const app = express();
+app.use(express.json());
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
@@ -20,3 +22,4 @@ app.listen(port, () => {
 });
 
 app.use('/api/user',userRouter);
+app.use('/api/auth', authRouter);
