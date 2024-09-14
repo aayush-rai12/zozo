@@ -79,9 +79,12 @@ body, html {
     margin-bottom: 5px;
 }
 
+.form_tag_register{
+    display: contents;
+}
 .register-input {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     border: none;
     border-bottom: 1.5px solid var(--cta-button-gradient-end) ;
     background: none;
