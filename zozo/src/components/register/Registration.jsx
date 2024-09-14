@@ -22,6 +22,7 @@ const Register = () => {
 
   const handleInputChange = (e, setter, setError) => {
     setter(e.target.value);
+    console.log(e.target.value);
     setError("");
   };
 
@@ -66,7 +67,9 @@ const Register = () => {
     }
 
     if (errors.length === 0) {
-      console.log("Form submitted successfully!");
+      var formData = {firstName,lastName,email,password,confirmPassword}
+      console.log(formData);
+      // Perform the form submission logic here
     } else {
       console.log(errors.join("\n"));
     }
@@ -137,7 +140,7 @@ const Register = () => {
           Create Account
         </button>
         <p className="login-text">
-          Already have an account?
+          Already have an account?{" "}
           <Link to="/login" className="login-link">
             Login Now
           </Link>

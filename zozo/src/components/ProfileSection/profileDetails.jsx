@@ -56,7 +56,7 @@
     return (
       <div className="container d-flex justify-content-center vh-100 p-1">
         <div className="bg-white p-4 shadow-sm rounded w-100" style={{ maxWidth: '800px' }}>
-          <h1 className="text-center mb-2">Create Account</h1>
+          <h1 className="text-center pro_heading mb-2">Create Account</h1>
           <form onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-md-6">
@@ -258,6 +258,7 @@
                   className="form-control"
                   id="city"
                   name="city"
+                  placeholder='Enter your city'
                   value={formData.city}
                   onChange={handleInputChange}
                 />
@@ -266,15 +267,15 @@
                 <label htmlFor="state" className="form-label">State</label>
                 <select
                   id="state"
-                  className="form-select"
+                  className="form-select form-control"
                   name="state"
                   value={formData.state}
                   onChange={handleInputChange}
                 >
-                  <option value="">Durg</option>
-                  <option value="">Rajnandgao</option>
-                  <option value="">test1</option>
-                  <option value="">test...</option>
+                  <option value="Durg">Durg</option>
+                  <option value="Rajnandgao">Rajnandgao</option>
+                  <option value="test1">test1</option>
+                  <option value="test">test...</option>
                   {/* Add more options here */}
                 </select>
               </div>
@@ -285,6 +286,7 @@
                   className="form-control"
                   id="zip"
                   name="zip"
+                  placeholder='12345'
                   value={formData.zip}
                   onChange={handleInputChange}
                 />
