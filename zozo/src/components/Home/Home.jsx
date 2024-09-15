@@ -6,8 +6,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import "./Home.css";
 import imgbg0 from '../../assets/image/love.png';
-import testIMG1 from '../../assets/image/testImg1.jpg';
-import testIMG2 from '../../assets/image/testImg2.jpg';
+import testIMG1 from '../../assets/image/loveBgm6.jpg';
+import testIMG2 from '../../assets/image/loveBgm4.jpg';
+import testIMG3 from '../../assets/image/loveBgm3.jpg';
 
 const HomeSection = () => {
 
@@ -53,7 +54,7 @@ const HomeSection = () => {
         </div>
         <div className="card card3" data-aos="fade-up" data-aos-delay="400">
           <img
-            src={testIMG1}
+            src={testIMG3}
             alt="Card 3"
             className="card-image"
           />

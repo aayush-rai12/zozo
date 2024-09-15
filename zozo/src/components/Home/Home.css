@@ -163,6 +163,7 @@ a {
   display: inline-block;
   margin-bottom: 0;
   line-height: 1;
+  color: red;
 }
 
 .heading-gradient {
