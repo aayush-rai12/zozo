@@ -41,13 +41,22 @@
     };
   
     const handleInputChange = (e) => {
-      const { name, value, type, checked } = e.target;
-      setFormData({
-        ...formData,
-        [name]: type === 'checkbox' ? checked : value,
-      });
+      const input = e.target;
+      let updatedFormData = { ...formData }; // Copy the current form data USING 
+      
+      // Check if the input is a checkbox
+      if (input.type === 'checkbox') {
+        updatedFormData[input.name] = input.checked; // Update checked status
+      } else {
+        updatedFormData[input.name] = input.value; // Update the input value
+      }
+    
+      setFormData(updatedFormData); // Set the new form data
     };
-  
+    
+    // const validateField = (test) => {
+    //   alert("aa gya ",test);
+    // }
     const handleSubmit = (e) => {
       e.preventDefault();
       console.log('Form Data:', { ...formData, photos });
