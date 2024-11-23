@@ -32,6 +32,7 @@ const ReactRouting = () => {
       path: "/FeelingCard",
       element: <FeelingCard />, 
     },
+    
   ]);
 
   return <RouterProvider router={router} />;

@@ -1,0 +1,262 @@
+/* Full-page gradient background with subtle animation */
+.feel_bg-gradient {
+  background: linear-gradient(to right, #fcb1b1, #fbd2d2, #d8b4f3);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: gradient-shift 10s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Card styles */
+.feel_card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.feel_card-title {
+  color: #e63946;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Textarea with floating label */
+.feel_form-floating {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.feel_form-floating textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #e63946;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  resize: none;
+  background-color: #f8f9fa;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.feel_form-floating textarea:focus {
+  border-color: #d32f2f;
+  box-shadow: 0 0 8px rgba(220, 53, 69, 0.4);
+}
+
+.feel_form-floating label {
+  position: absolute;
+  top: 12px;
+  left: 25%;
+  font-size: 1rem;
+  color: #6c757d;
+  transition: all 0.2s;
+  pointer-events: none;
+}
+
+.error-text{
+  color: red;
+  display: flex;
+  justify-content: center
+}
+
+.feel_form-floating textarea:focus + label,
+.feel_form-floating textarea:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 12px;
+  font-size: 0.9rem;
+  color: #d32f2f;
+  background-color: #ffffff;
+  padding: 0 5px;
+}
+
+/* Mood section */
+.feel_mood-section {
+  text-align: center;
+}
+
+.feel_mood-title {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.feel_mood-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.feel_mood-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 2rem;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  border: none;
+  background-color: #f8f9fa; /* Default color */
+}
+
+.feel_mood-button:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.feel_mood-button.selected {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Save button */
+.feel_btn-save {
+  width: 100%;
+  background: linear-gradient(to right, #e63946, #b71c1c);
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.feel_btn-save:hover {
+  background: linear-gradient(to right, #b71c1c, #e63946);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(220, 53, 69, 0.4);
+}
+
+/* for created card */
+
+.share_feeling_card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.share_feeling_card:hover {
+  transform: scale(1.05);
+}
+
+.feeling_card_header {
+  font-size: 1.8rem;
+  color: #5c6bc0;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.share_feelings {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.share_feelings .feeling_text {
+  font-style: italic;
+}
+
+/* Button Style */
+.like-button {
+  padding: 12px 20px;
+  background: linear-gradient(45deg, #5c6bc0, #3f4b8e);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.like-button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #3f4b8e, #5c6bc0);
+}
+
+.like-button:active {
+  transform: scale(0.95);
+}
+
+/* Heart Animation */
+.heart {
+  position: absolute;
+  top: -50px;
+  font-size: 30px;
+  color: red;
+  animation: heart-fall ease-in forwards;
+  pointer-events: none;
+  user-select: none;
+  animation: heart-fall key=on-eart
+}
+
+/* Keyframes */
+@keyframes heart-fall {
+  0% {
+    top: -50px;
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+
+
+/* Container for cards */
+.cards-container {
+  display: grid; /* Switch to grid layout */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  justify-items: center; /* Center cards horizontally */
+}
+
+/* Individual card styling remains unchanged */
+.share_feeling_card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Now dynamic based on container */
+  max-width: 350px; /* Prevent card from becoming too large */
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.share_feeling_card:hover {
+  transform: scale(1.05);
+}
+
+
+
+
