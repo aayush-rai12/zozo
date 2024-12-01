@@ -1,7 +1,7 @@
 # zozo
 
 
-Zozo Dating is a project focused on creating a modern dating platform with a swiper card feature similar to Tinder. Users can swipe left or right to like or pass on potential matches. The platform aims to provide a seamless and engaging user experience for those looking to connect and form relationships.
+Zozo Dating is a modern dating platform designed to help users connect and form meaningful relationships. The platform focuses on providing an engaging and user-friendly experience, allowing individuals to explore potential matches based on shared interests and preferences. With a seamless interface and intuitive features, Zozo Dating aims to create a space where users can easily meet and interact with others
 
 
 
